@@ -127,3 +127,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-jaredakigbesot-cinemap4-1dv2gq1dyuo.ws-eu120.gitpod.io'
+]
+
+SECURE_CSRF_COOKIE = False  # Allow CSRF cookie over HTTP for Gitpod dev
