@@ -1,3 +1,12 @@
 from django.shortcuts import render
 
-# Create your views here.
+from django.shortcuts import get_object_or_404
+from .models import Movie, Screening
+
+def movie_detail_view(request, pk):
+    movie = get_object_or_404(Movie, pk=pk)
+    screenings = Screening.objects.filter(movie=movie).order_by('screening_time')
+    return render(request, 'cinema/movie_detail.html', {
+        'movie': movie,
+        'screenings': screenings,
+    })

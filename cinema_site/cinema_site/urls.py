@@ -19,4 +19,5 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('movie/<int:pk>/', views.movie_detail_view, name='movie_detail'),
 ]
