@@ -25,7 +25,13 @@ SECRET_KEY = 'django-insecure-+5_-0+kr13m(30%vmwb=t3!+*#ni25-1twbk4rcyh&$1dvd%r4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ import os
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+# Add Gitpod host for development
+if os.environ.get('GITPOD_WORKSPACE_URL'):
+    ALLOWED_HOSTS.append(os.environ['GITPOD_WORKSPACE_URL'].replace("https://", "").split("/")[0])
+]
 
 
 # Application definition
