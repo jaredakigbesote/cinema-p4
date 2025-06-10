@@ -58,6 +58,7 @@ def dashboard_view(request):
 from django.shortcuts import redirect
 from .forms import BookingForm
 from .models import Screening
+from django.contrib import messages
 
 @login_required
 def book_screening_view(request, screening_id):
@@ -70,6 +71,7 @@ def book_screening_view(request, screening_id):
             booking.user = request.user
             booking.screening = screening
             booking.save()
+            messages.success(request, 'Booking successful!')
             return redirect('dashboard') 
     else:
         form = BookingForm()
