@@ -28,6 +28,7 @@ DEBUG = True
 
 
 ALLOWED_HOSTS = []
+CSRF_TRUSTED_ORIGINS = []
 
 gitpod_url = os.environ.get("GITPOD_WORKSPACE_URL")
 if gitpod_url:
@@ -35,6 +36,8 @@ if gitpod_url:
     wildcard_host = f".{'.'.join(full_host.split('.')[1:])}"  # e.g. .gitpod.io
     ALLOWED_HOSTS.append(full_host)
     ALLOWED_HOSTS.append(wildcard_host)
+
+    CSRF_TRUSTED_ORIGINS.append(f"https://{full_host}")
 
 
 
