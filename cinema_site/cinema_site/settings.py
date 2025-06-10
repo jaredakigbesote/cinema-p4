@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-import os
+import os 
+import re
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,12 +26,17 @@ SECRET_KEY = 'django-insecure-+5_-0+kr13m(30%vmwb=t3!+*#ni25-1twbk4rcyh&$1dvd%r4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-import os
 
 ALLOWED_HOSTS = []
 
-if os.environ.get("GITPOD_WORKSPACE_URL"):
-    ALLOWED_HOSTS.append(os.environ["GITPOD_WORKSPACE_URL"].replace("https://", "").replace("http://", ""))
+gitpod_url = os.environ.get("GITPOD_WORKSPACE_URL")
+if gitpod_url:
+    full_host = gitpod_url.replace("https://", "").replace("http://", "")
+    wildcard_host = f".{'.'.join(full_host.split('.')[1:])}"  # e.g. .gitpod.io
+    ALLOWED_HOSTS.append(full_host)
+    ALLOWED_HOSTS.append(wildcard_host)
+
+
 
 
 # Application definition
