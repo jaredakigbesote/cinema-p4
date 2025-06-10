@@ -1,0 +1,13 @@
+<h1>Now Showing</h1>
+
+<ul>
+  {% for movie in movies %}
+    <li>
+      <a href="{% url 'movie_detail' movie.pk %}">{{ movie.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+{% if not movies %}
+  <p>No movies available.</p>
+{% endif %}
