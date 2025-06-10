@@ -54,3 +54,29 @@ def logout_view(request):
 def dashboard_view(request):
     return render(request, 'cinema/dashboard.html')
 
+    from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
+from .forms import BookingForm
+from .models import Screening
+
+@login_required
+def book_screening_view(request, screening_id):
+    screening = Screening.objects.get(id=screening_id)
+
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            booking = form.save(commit=False)
+            booking.user = request.user
+            booking.screening = screening
+            booking.save()
+            return redirect('dashboard') 
+    else:
+        form = BookingForm()
+
+    return render(request, 'cinema/book_screening.html', {
+        'form': form,
+        'screening': screening
+    })
+
+
