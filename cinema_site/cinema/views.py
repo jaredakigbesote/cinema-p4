@@ -34,6 +34,7 @@ def register_view(request):
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
+from .models import Booking
 
 def login_view(request):
     if request.method == 'POST':
@@ -52,7 +53,10 @@ def logout_view(request):
 
 @login_required
 def dashboard_view(request):
-    return render(request, 'cinema/dashboard.html')
+    bookings = Booking.objects.filter(user=request.user).select_related('screening__movie')
+    return render(request, 'cinema/dashboard.html',  {
+        'bookings': bookings
+    })
 
     from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect

@@ -1,5 +1,6 @@
 <h1>Welcome, {{ request.user.username }}!</h1>
 
+<!-- Booking success message -->
 {% if messages %}
   <ul class="messages">
     {% for message in messages %}
@@ -8,6 +9,24 @@
   </ul>
 {% endif %}
 
-<p>This is your dashboard.</p>
+<!-- Booking history -->
+
+<h2>Your Bookings</h2>
+
+{% if bookings %}
+  <ul>
+    {% for booking in bookings %}
+      <li>
+        <strong>{{ booking.screening.movie.title }}</strong> — 
+        {{ booking.screening.screening_time }} |
+        Seats: {{ booking.seats }}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+
+<p>You Haven't made bookings yet.</p>
+
+{% endif %}
 
 <a href="{% url 'logout' %}">Log out</a>
