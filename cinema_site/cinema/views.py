@@ -1,7 +1,7 @@
-from django.shortcuts import render
-
-from django.shortcuts import get_object_or_404
-from .models import Movie, Screening
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
+from .models import Movie, Screening, Booking
+from .forms import BookingForm
 
 def movie_detail_view(request, pk):
     movie = get_object_or_404(Movie, pk=pk)
@@ -11,19 +11,9 @@ def movie_detail_view(request, pk):
         'screenings': screenings,
     })
 
-from django.shortcuts import render
-from .models import Movie
-
 def movie_list_view(request):
     movies = Movie.objects.all()
     return render(request, 'cinema/movie_list.html', {'movies': movies})
-
-from django.shortcuts import render, redirect
-from .models import Booking
-from django.shortcuts import redirect
-from .forms import BookingForm
-from .models import Screening
-from django.contrib import messages
 
 def book_screening_view(request, screening_id):
     screening = Screening.objects.get(id=screening_id)
@@ -35,7 +25,7 @@ def book_screening_view(request, screening_id):
             booking.screening = screening
             booking.save()
             messages.success(request, 'Booking successful!')
-            return redirect('dashboard') 
+            return redirect('movie_list') 
     else:
         form = BookingForm()
 
