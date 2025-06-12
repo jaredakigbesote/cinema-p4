@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+  {% load static %}
 <head>
+    <link rel="stylesheet" href="{% static 'assets/style.css' %}">
     <meta charset="UTF-8">
     <title>Login</title>
 </head>
@@ -13,4 +15,11 @@
     </form>
     <p><a href="{% url 'movie_list' %}">Back to movies</a></p>
 </body>
+
+{% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}! <a href="{% url 'logout' %}">Logout</a></p>
+{% else %}
+    <a href="{% url 'login' %}">Login</a>
+{% endif %}
+
 </html>
