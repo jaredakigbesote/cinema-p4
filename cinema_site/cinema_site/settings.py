@@ -9,33 +9,21 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-import os 
-import re
+import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+5_-0+kr13m(30%vmwb=t3!+*#ni25-1twbk4rcyh&$1dvd%r4'
-
-# SECURITY WARNING: don't run with debug turned on in production!
+SECRET_KEY = 'your-secret-key-here'
 DEBUG = True
 
-# Get Gitpod URL from environment
-GITPOD_URL = os.environ.get("GITPOD_WORKSPACE_URL")
+ALLOWED_HOSTS = ['jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gitpod.io', '8000-jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gitpod.io', 'https://8000-jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gitpod.io']
 
-if GITPOD_URL:
-    hostname = GITPOD_URL.replace("https://", "").replace("http://", "")
-    ALLOWED_HOSTS = [hostname]
-    CSRF_TRUSTED_ORIGINS = [f"https://{hostname}"]
-else:
-    ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
-    CSRF_TRUSTED_ORIGINS = []
+# Optional: Disable secure CSRF cookie in dev
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False
+
 
 # Application definition
 
@@ -131,8 +119,3 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://8000-jaredakigbesot-cinemap4-1dv2gq1dyuo.ws-eu120.gitpod.io'
-]
-
-SECURE_CSRF_COOKIE = False  # Allow CSRF cookie over HTTP for Gitpod dev
