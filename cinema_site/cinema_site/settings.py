@@ -26,21 +26,16 @@ SECRET_KEY = 'django-insecure-+5_-0+kr13m(30%vmwb=t3!+*#ni25-1twbk4rcyh&$1dvd%r4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Get Gitpod URL from environment
+GITPOD_URL = os.environ.get("GITPOD_WORKSPACE_URL")
 
-ALLOWED_HOSTS = []
-CSRF_TRUSTED_ORIGINS = []
-
-gitpod_url = os.environ.get("GITPOD_WORKSPACE_URL")
-if gitpod_url:
-    full_host = gitpod_url.replace("https://", "").replace("http://", "")
-    wildcard_host = f".{'.'.join(full_host.split('.')[1:])}"  # e.g. .gitpod.io
-    ALLOWED_HOSTS.append(full_host)
-    ALLOWED_HOSTS.append(wildcard_host)
-
-    CSRF_TRUSTED_ORIGINS.append(f"https://{full_host}")
-
-
-
+if GITPOD_URL:
+    hostname = GITPOD_URL.replace("https://", "").replace("http://", "")
+    ALLOWED_HOSTS = [hostname]
+    CSRF_TRUSTED_ORIGINS = [f"https://{hostname}"]
+else:
+    ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+    CSRF_TRUSTED_ORIGINS = []
 
 # Application definition
 
