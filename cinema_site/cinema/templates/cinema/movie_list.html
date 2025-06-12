@@ -1,13 +1,28 @@
-<h1>Now Showing</h1>
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Now Showing</title>
+</head>
+<body>
+      <h1>Now Showing</h1>
 
-{% for movie in movies %}
+      {% if movies %}
 <ul>
+  {% for movie in movies %}
     <li>
       <a href="{% url 'movie_detail' movie.pk %}">{{ movie.title }}</a>
     </li>
   {% endfor %}
 </ul>
 
-{% if not movies %}
+{% else %}
   <p>No movies available.</p>
 {% endif %}
+
+{% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}! <a href="{% url 'logout' %}">Logout</a></p>
+{% else %}
+    <a href="{% url 'login' %}">Login</a>
+{% endif %}
+</body>
+</html>
