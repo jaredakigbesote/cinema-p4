@@ -17,8 +17,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'your-secret-key-here'
 DEBUG = True
 
-ALLOWED_HOSTS = ['jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gitpod.io', '8000-jaredakigbesot-cinemap4-lnopmnznl2a.ws-eu120.gitpod.io']
-CSRF_TRUSTED_ORIGINS = ['https://jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gitpod.io', 'https://8000-jaredakigbesot-cinemap4-lnopmnznl2a.ws-eu120.gitpod.io']
+ALLOWED_HOSTS = ['jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gitpod.io', '8000-jaredakigbesot-cinemap4-b8ru86svp8w.ws-eu120.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gitpod.io', 'https://8000-jaredakigbesot-cinemap4-b8ru86svp8w.ws-eu120.gitpod.io']
 
 # Optional: Disable secure CSRF cookie in dev
 CSRF_COOKIE_SECURE = False
@@ -113,6 +113,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
