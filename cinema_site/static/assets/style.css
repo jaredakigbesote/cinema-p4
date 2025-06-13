@@ -105,3 +105,29 @@ footer {
     font-size: 30px;
 
 }
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #444;
+  font-family: sans-serif;
+}
+
+.footer-nav a, .footer-nav button {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.footer-nav button:hover,
+.footer-nav a:hover {
+  text-decoration: underline;
+}

@@ -37,7 +37,7 @@
       {% endif %}
     </section>
   </div>
-  <footer>
+  <footer class ="footer-nav">
     {% if user.is_authenticated %}
     <p>Welcome, {{ user.username }}! <form action="{% url 'logout' %}" method="post" style="display:inline;">
         {% csrf_token %}
