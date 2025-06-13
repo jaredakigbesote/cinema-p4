@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import Movie, Screening, Booking
-from .forms import BookingForm, SignUpForm
+from .forms import BookingForm
 from django.db import models
 from django.contrib.auth.forms import UserCreationForm
 
