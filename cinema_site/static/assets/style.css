@@ -1,10 +1,26 @@
 body {
-    background: url('/static/assets/images/starry_night.jpg') no-repeat center center fixed;
-    background-size: cover;
     font-family: 'Arial', sans-serif;
     color: #fff;
     margin: 0;
     padding: 0;
+}
+#main{
+    background: url('/static/assets/images/starry_night.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    background-color: black;
+    padding: 0;
+    position: sticky;
+    z-index: 99;
+    width: 100%;
+    box-shadow: 0 2px 2px #808080;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    top: 0;
+    left: 0;
 }
 
 #list_heading1{
@@ -80,4 +96,9 @@ button {
 
 button:hover {
     background-color: #ffc107;
+}
+
+footer {
+    background-color: black;
+
 }

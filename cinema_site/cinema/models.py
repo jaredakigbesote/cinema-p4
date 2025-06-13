@@ -6,6 +6,7 @@ class Movie(models.Model):
     description = models.TextField()
     duration = models.PositiveIntegerField(help_text="Duration in minutes")
     release_date = models.DateField()
+    image = models.ImageField(upload_to='movie_images/', null=True, blank=True)
 
     def __str__(self):
         return self.title
