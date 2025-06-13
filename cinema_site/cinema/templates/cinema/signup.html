@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NC Cinema</title>
+</head>
+<header>
+    <h1>Create An Account</h1>
+</header>
+<body>
+    <h2>Create Account</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sign up</button>
+    </form>
+    <p><a href="{% url 'login' %}">Already have an account? Login here.</a></p>
+</body>
+</html>

@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import Movie, Screening, Booking
-from .forms import BookingForm
+from .forms import BookingForm, SignUpForm
 from django.db import models
+from django.contrib.auth.forms import UserCreationForm
 
 def movie_detail_view(request, pk):
     movie = get_object_or_404(Movie, pk=pk)
@@ -43,4 +44,14 @@ def test_view(request):
 
     def __str__(self):
         return self.title
+
+def signup_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('movie_list') 
+    else:
+        form = UserCreationForm()
+    return render(request, 'cinema/signup.html', {'form': form})
 
