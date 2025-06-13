@@ -1,7 +1,83 @@
 body {
-    background-color: black;
+    background: url('/static/assets/images/starry_night.jpg') no-repeat center center fixed;
+    background-size: cover;
     font-family: 'Arial', sans-serif;
     color: #fff;
     margin: 0;
     padding: 0;
+}
+
+#list_heading1{
+    color: yellow;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0
+}
+#list_heading2{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px 0;
+    margin: 0
+}
+ul#movie_box {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+li#movie_list {
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    text-align: center;
+    width: 220px;
+    transition: transform 0.3s ease;
+}
+
+li#movie_list:hover {
+    transform: scale(1.05);
+}
+
+li#movie_list img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+li#movie_list a {
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: block;
+    margin-top: 10px;
+}
+
+li#movie_list a:hover {
+    text-decoration: underline;
+}
+
+p, .auth-links {
+    text-align: center;
+    margin: 20px 0;
+}
+
+button {
+    background-color: #ffd700;
+    border: none;
+    padding: 10px 15px;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #ffc107;
 }
