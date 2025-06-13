@@ -1,4 +1,8 @@
 {% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'assets/style.css' %}">
+  <title>NC Cinema</title>
+</head>
 <!DOCTYPE html>
 <html>
 
@@ -41,6 +45,7 @@
       </form>
     </p>
     {% else %}
+    <a href="{% url 'signup' %}">Sign Up</a>
     <a href="{% url 'login' %}">Login</a>
     {% endif %}
   </footer>

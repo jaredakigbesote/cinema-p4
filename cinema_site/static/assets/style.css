@@ -6,6 +6,8 @@ body {
 }
 section{
     background: url('/static/assets/images/starry_night.jpg') no-repeat center center fixed;
+    padding-bottom: 10px;
+    padding-top: 10px;
     background-size: cover;
 }
 
