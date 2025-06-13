@@ -15,5 +15,18 @@
         <button type="submit">Sign up</button>
     </form>
     <p><a href="{% url 'login' %}">Already have an account? Login here.</a></p>
+
+    <footer class ="footer-nav">
+    {% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}! <form action="{% url 'logout' %}" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+      </form>
+    </p>
+    {% else %}
+    <a href="{% url 'signup' %}">Sign Up</a>
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+  </footer>
 </body>
 </html>

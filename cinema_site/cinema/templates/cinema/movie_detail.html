@@ -36,6 +36,19 @@
       <a href="{% url 'movie_list' %}">← Back to all movies</a>
     </div>
   </section>
+
+  <footer class ="footer-nav">
+    {% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}! <form action="{% url 'logout' %}" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+      </form>
+    </p>
+    {% else %}
+    <a href="{% url 'signup' %}">Sign Up</a>
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+  </footer>
 </body>
 
 </html>
