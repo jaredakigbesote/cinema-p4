@@ -20,6 +20,7 @@ section{
     padding-bottom: 10px;
     padding-top: 10px;
     background-size: cover;
+    min-height: 1480px;
 }
 
 header {
@@ -111,6 +112,8 @@ button:hover {
     background-color: #ffc107;
 }
 
+/* Footer navigation */
+
 footer {
     background-color: black;
     padding-top: 15px;
@@ -140,4 +143,59 @@ footer {
 .footer-nav button:hover,
 .footer-nav a:hover {
   text-decoration: underline;
+}
+
+
+/* Title styling */
+.movie-title {
+    text-align: center;
+    font-size: 2.5rem;
+    padding-top: 20px;
+}
+
+/* Image and info layout */
+.movie-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.movie-info {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Booking section */
+.movie-booking {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #888;
+}
+
+.movie-booking h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.movie-booking ul {
+    list-style: none;
+    padding: 0;
+}
+
+.movie-booking li {
+    margin: 10px 0;
+}
+
+.movie-booking a {
+    color: #1f8ef1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.movie-booking a:hover {
+    text-decoration: underline;
 }
