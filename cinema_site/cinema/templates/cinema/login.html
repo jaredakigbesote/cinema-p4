@@ -1,31 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  {% load static %}
+
 <head>
-    <link rel="stylesheet" href="{% static 'assets/style.css' %}">
-    <meta charset="UTF-8">
-    <title>Login</title>
+  <link rel="stylesheet" href="{% static 'assets/style.css' %}">
+  <meta charset="UTF-8">
+  <title>NC Cinema</title>
 </head>
+
 <body>
-    <h2>Login</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Log in</button>
+  <header class="login-head">
+    <h1>Login</h1>
+  </header>
+  <section>
+  <form class="login-form"  method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="login-button"  type="submit">Log in</button>
+  </form>
+  <p class="login-p"><a href="{% url 'movie_list' %}">Back to movies</a></p>
+  </section>
+
+
+<footer class="footer-nav">
+  {% if user.is_authenticated %}
+  <p>Welcome, {{ user.username }}! <form action="{% url 'logout' %}" method="post" style="display:inline;">
+      {% csrf_token %}
+      <button type="submit">Logout</button>
     </form>
-    <p><a href="{% url 'movie_list' %}">Back to movies</a></p>
+  </p>
+  {% else %}
+  <a href="{% url 'signup' %}">Sign Up</a>
+  <a href="{% url 'login' %}">Login</a>
+  {% endif %}
+</footer>
 </body>
 
-<footer class ="footer-nav">
-    {% if user.is_authenticated %}
-    <p>Welcome, {{ user.username }}! <form action="{% url 'logout' %}" method="post" style="display:inline;">
-        {% csrf_token %}
-        <button type="submit">Logout</button>
-      </form>
-    </p>
-    {% else %}
-    <a href="{% url 'signup' %}">Sign Up</a>
-    <a href="{% url 'login' %}">Login</a>
-    {% endif %}
-  </footer>
 </html>
