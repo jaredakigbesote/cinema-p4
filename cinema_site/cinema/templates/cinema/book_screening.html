@@ -1,4 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="{% static 'assets/style.css' %}">
+  <meta charset="UTF-8">
+  <title>NC Cinema</title>
+</head>
+
+<header>
 <h1>Book Seats for {{ screening.movie.title }}</h1>
+</header>
+<body>
+  
+
+<section>
+  <div class="screen-booking">
 <p>Time: {{ screening.screening_time }} | Screen: {{ screening.screen_number }}</p>
 
 <form method="POST">
@@ -8,6 +25,9 @@
 </form>
 
 <a href="{% url 'movie_detail' screening.movie.pk %}">← Back to Movie</a>
+</div>
+</section>
+
 
 <footer class ="footer-nav">
     {% if user.is_authenticated %}
@@ -21,3 +41,5 @@
     <a href="{% url 'login' %}">Login</a>
     {% endif %}
   </footer>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-html, body {
+html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -317,5 +317,60 @@ header h2 {
 }
 
 .sign-upbox a:hover {
+  text-decoration: underline;
+}
+
+/* Booking screen form container */
+.screen-booking {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 10px;
+  max-width: 500px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+font-size: 1.3rem;
+}
+
+/* Adjust form elements inside the booking screen */
+.screen-booking form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.screen-booking input,
+.screen-booking select,
+.screen-booking button {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.screen-booking button {
+  background-color: #ffd700;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.screen-booking button:hover {
+  background-color: #e5c100;
+}
+
+/* Back to movie link */
+.screen-booking a {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: #1f8ef1;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.screen-booking a:hover {
   text-decoration: underline;
 }
