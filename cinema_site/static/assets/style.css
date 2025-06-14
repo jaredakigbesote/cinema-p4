@@ -374,3 +374,23 @@ font-size: 1.3rem;
 .screen-booking a:hover {
   text-decoration: underline;
 }
+
+.popup-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4CAF50;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  z-index: 1000;
+  font-size: 1.2rem;
+  animation: fadeOut 4s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}

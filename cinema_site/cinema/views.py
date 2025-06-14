@@ -18,7 +18,7 @@ def movie_list_view(request):
     return render(request, 'cinema/movie_list.html', {'movies': movies})
 
 def book_screening_view(request, screening_id):
-    screening = Screening.objects.get(id=screening_id)
+    screening = get_object_or_404(Screening, pk=screening_id)
 
     if request.method == 'POST':
         form = BookingForm(request.POST)
@@ -28,7 +28,7 @@ def book_screening_view(request, screening_id):
             booking.user = request.user
             booking.save()
             messages.success(request, 'Booking successful!')
-            return redirect('movie_list') 
+            return redirect('movie_detail', pk=screening.movie.pk) 
     else:
         form = BookingForm()
 

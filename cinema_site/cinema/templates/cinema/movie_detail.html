@@ -21,6 +21,13 @@
     </div>
     <div class="booking-head">
       <h1>Upcoming Screenings</h1>
+      {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+        <li class="popup-message">{{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
     </div>
     <div class="movie-booking">
       <ul>
