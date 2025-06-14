@@ -23,7 +23,7 @@ CSRF_TRUSTED_ORIGINS = ['https://jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gi
 
 # Disable secure CSRF cookie in dev
 CSRF_COOKIE_SECURE = False
-SESSION_COOKIE_SECURE = Falses
+SESSION_COOKIE_SECURE = False
 
 
 # Application definition
