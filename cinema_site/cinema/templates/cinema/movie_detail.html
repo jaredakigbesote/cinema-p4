@@ -19,8 +19,10 @@
       <p><strong>Duration:</strong> {{ movie.duration }} minutes</p>
       <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
     </div>
-    <div class="movie-booking">
+    <div class="booking-head">
       <h1>Upcoming Screenings</h1>
+    </div>
+    <div class="movie-booking">
       <ul>
         {% for screening in screenings %}
         <li>
