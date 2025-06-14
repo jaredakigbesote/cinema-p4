@@ -18,10 +18,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'your-secret-key-here'
 DEBUG = True
 
-ALLOWED_HOSTS = ['jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gitpod.io', '8000-jaredakigbesot-cinemap4-9dnv5cggf1i.ws-eu120.gitpod.io', 'nc-cinema-0b8ae11a4fc2.herokuapp.com']
+ALLOWED_HOSTS = ['jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gitpod.io', '8000-jaredakigbesot-cinemap4-9dnv5cggf1i.ws-eu120.gitpod.io', 'https://git.heroku.com/nc-cinema.git']
 CSRF_TRUSTED_ORIGINS = ['https://jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gitpod.io', 'https://8000-jaredakigbesot-cinemap4-9dnv5cggf1i.ws-eu120.gitpod.io']
 
-# Optional: Disable secure CSRF cookie in dev
+# Disable secure CSRF cookie in dev
 CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = False
 
