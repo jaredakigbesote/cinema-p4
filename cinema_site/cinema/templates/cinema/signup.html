@@ -1,22 +1,29 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>NC Cinema</title>
+  <link rel="stylesheet" href="{% static 'assets/style.css' %}">
+  <meta charset="UTF-8">
+  <title>NC Cinema</title>
 </head>
 <header>
-    <h1>Create An Account</h1>
+  <h1>Create An Account</h1>
 </header>
+
 <body>
-    <h2>Create Account</h2>
+  <section>
+    <div class="sign-upbox">
     <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Sign up</button>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Sign up</button>
     </form>
     <p><a href="{% url 'login' %}">Already have an account? Login here.</a></p>
+    </div>
+  </section>
 
-    <footer class ="footer-nav">
+  <footer class="footer-nav">
     {% if user.is_authenticated %}
     <p>Welcome, {{ user.username }}! <form action="{% url 'logout' %}" method="post" style="display:inline;">
         {% csrf_token %}
@@ -29,4 +36,5 @@
     {% endif %}
   </footer>
 </body>
+
 </html>

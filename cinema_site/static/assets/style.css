@@ -117,6 +117,7 @@ button:hover {
 footer {
     background-color: black;
     padding-top: 15px;
+    font-size: 30px;
 
 }
 .footer-nav {
@@ -274,4 +275,47 @@ header h2 {
     text-align: center;
     margin-top: 30px;
     color: #fff;
+}
+
+/* Sign-up box styling */
+.sign-upbox {
+  max-width: 400px;
+  margin: 80px auto 20px auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #000;
+  color: white;
+}
+
+/* Style form fields */
+.sign-upbox input, 
+.sign-upbox button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Style the button */
+.sign-upbox button {
+  background-color: #1f8ef1;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Link styling */
+.sign-upbox a {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.sign-upbox a:hover {
+  text-decoration: underline;
 }
