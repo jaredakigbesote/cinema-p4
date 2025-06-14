@@ -18,8 +18,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'unsafe-default-key')
 DEBUG = True
 
-ALLOWED_HOSTS = ['jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gitpod.io', 'nc-cinema-0b8ae11a4fc2.herokuapp.com']
-CSRF_TRUSTED_ORIGINS = ['https://jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gitpod.io', 'https://8000-jaredakigbesot-cinemap4-9dnv5cggf1i.ws-esot-cinemap4-9dnv5cggf1i.ws-eu120.gitpod.io', 'https://git.heroku.com/nc-cinema.gieu120.gitpod.io']
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://nc-cinema-0b8ae11a4fc2.herokuapp.com']
 
 # Disable secure CSRF cookie in dev
 CSRF_COOKIE_SECURE = False
@@ -138,5 +138,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Heroku database
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
-ALLOWED_HOSTS = ['your-heroku-app-name.herokuapp.com']
 DEBUG = False
