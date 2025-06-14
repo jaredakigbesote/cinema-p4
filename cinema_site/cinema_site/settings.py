@@ -11,13 +11,14 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'your-secret-key-here'
 DEBUG = True
 
-ALLOWED_HOSTS = ['jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gitpod.io', '8000-jaredakigbesot-cinemap4-9dnv5cggf1i.ws-eu120.gitpod.io']
+ALLOWED_HOSTS = ['jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gitpod.io', '8000-jaredakigbesot-cinemap4-9dnv5cggf1i.ws-eu120.gitpod.io', 'nc-cinema.herokuapp.com']
 CSRF_TRUSTED_ORIGINS = ['https://jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gitpod.io', 'https://8000-jaredakigbesot-cinemap4-9dnv5cggf1i.ws-eu120.gitpod.io']
 
 # Optional: Disable secure CSRF cookie in dev
@@ -127,3 +128,15 @@ LOGOUT_REDIRECT_URL = '/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# Whitenoise to serve static files
+MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Heroku database
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
+ALLOWED_HOSTS = ['your-heroku-app-name.herokuapp.com']
+DEBUG = False
