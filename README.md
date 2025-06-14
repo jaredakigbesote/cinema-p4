@@ -1,175 +1,244 @@
-!Overview
+# NC Cinema Star Wars
 
 NC Cinema is a full-stack Django web application that allows users to browse movies, view screening times, and book tickets online. It supports user registration, login/logout, and includes role-based access through Django’s built-in admin panel. This project was developed to demonstrate competency across several full-stack development learning outcomes.
+![main]()
 
-!Features
+## Features
 
-Home page displaying currently showing movies with images
+- Home page displaying currently showing movies with images
 
-Individual movie detail pages with description, release info, and screening times
+![home]()
 
-User authentication (sign up, log in, log out)
+- Individual movie detail pages with description, release info, and screening times
 
-Logged-in users can book available screenings
+![details]()
 
-Admin panel to manage movies, screenings, and bookings
+- User authentication (sign up, log in, log out)
 
-Dynamic navbar/footer with authentication-based links
+![user]{}
 
-Flash messages for user feedback (e.g. successful booking)
+- Logged-in users can book available screenings
 
-Fully styled with a responsive CSS layout
+![notloogedin]()
+![loggedin]()
 
-!User Experience Flow
+- Admin panel to manage movies, screenings, and bookings
 
-Landing Page:
+![admin]()
 
-Users see a list of movies with posters and titles.
+- footer with authentication-based links
 
-They can click on any movie to view more details.
+![footer]()
 
-Detail Page:
+- Flash messages for user feedback (e.g. successful booking)
 
-Users see the selected movie’s info, upcoming screenings, and can book tickets if logged in.
+![booking]()
 
-If not logged in, the site prompts them to log in before booking.
+- Fully styled with a responsive CSS layout
 
-Authentication:
+## Design
+- The design of NC Cinema focuses on creating an intuitive and visually appealing user experience that aligns with a modern movie-going theme. Key design decisions include:
 
-Users can create an account or log in.
+__Layout and Structure__
+- Home Page (Movie List): A clean grid layout displays currently showing movies with titles and posters. Each movie links to a detailed view.
 
-Once authenticated, users can make a booking and view success messages.
+- Movie Detail Page: Provides a dedicated space for movie information with a larger poster, synopsis, duration, release date, and a clearly separated booking section.
 
-Admin Access:
+- Authentication Pages (Login & Signup): Styled simply and consistently, with centered forms and clear call-to-actions.
 
-Admins can add/edit/delete movies, screenings, and users through Django’s admin interface.
+- Footer Navigation: Persistent at the bottom of the screen, allowing users to easily log in, sign up, or log out from any page.
 
-Technologies Used
+__Styling and Aesthetics__
+- Background: The site uses a full-page cinema-themed background to immerse users in a moviegoing experience.
 
-Python 3.12
+- Color Scheme: A dark overlay with golden and light blue highlights was chosen to reflect a cinematic, luxurious vibe.
 
-Django 5.2.3
+- Typography: Clean and readable fonts were used, with consistent sizing for headings, body text, and buttons.
 
-HTML/CSS 
+__User Experience (UX)__
+- Responsive Elements: The layout adapts to screen size and keeps key features (like booking buttons) accessible.
 
-SQLite3 (development DB)
+- Feedback: A popup message confirms successful bookings for better interaction.
 
-Git & GitHub
+- Error Handling: User-friendly error messages for login, signup, and form submissions.
 
-Gitpod (
+- The overall design ensures that the site is easy to navigate, visually consistent, and enhances the user’s experience from browsing movies to booking seats.
 
-  Key Issues & Fixes
 
-Issue
+## User Experience Flow
 
-Solution
+__Landing Page__:
 
-Static files (CSS) not loading
+- Users see a list of movies with posters and titles.
 
-Corrected static path and used {% load static %} with proper STATICFILES_DIRS
+- They can click on any movie to view more details.
 
-Images not showing per movie
+__Detail Page__:
 
-Added ImageField to Movie model and ensured Pillow was installed
+- Users see the selected movie’s info, upcoming screenings, and can book tickets if logged in.
 
-Booking without being logged in
+- If not logged in, the site prompts them to log in before booking.
 
-Added logic to restrict booking views to authenticated users
+__Authentication__:
 
-Logout error (HTTP 405)
+- Users can create an account or log in.
 
-Changed logout to use POST method via form
+- Once authenticated, users can make a booking and view success messages.
 
-Database changes not showing
+__Admin Access__:
 
-Fixed with makemigrations and migrate
+- Admins can add/edit/delete movies, screenings, and users through Django’s admin interface.
 
-Signup reverse URL error
+## Technologies Used
 
-Corrected name='signup' in urls.py and ensured view was connected
+- Python 3.12
 
-Broken footer layout
+- Django 5.2.3
 
-Used flexbox and fixed alignment to maintain visual structure
+- HTML/CSS 
 
-future Improvements
+- SQLite3 (development DB)
 
-Add user booking history view
+- Git & GitHub
 
-Allow movie ratings and comments
+- Gitpod
 
-Add pagination to movie list
+## Key Issues & Fixes
 
-Integrate Stripe for online payments (optional)
+__Issue__
 
+- Static files (CSS) not loading
 
+__Solution__
 
- Learning Outcomes
+- Corrected static path and used {% load static %} with proper STATICFILES_DIRS
 
-LO1: Agile Methodologies
+__Issue__
 
-Used Trello and GitHub Issues for tracking features, bugs, and progress
+- Images not showing per movie
 
-Project evolved iteratively with priority-based tasks
+__Solution__
 
-LO2: Data Modeling
+- Added ImageField to Movie model and ensured Pillow was installed
 
-Models: Movie, Screening, Booking
+__Issue__
 
-Used relational foreign keys and appropriate field types (e.g. DateTimeField, ImageField)
+- Booking without being logged in
 
-LO3: Authentication & Authorization
+__Solution__
 
-Implemented login, logout, signup
+- Added logic to restrict booking views to authenticated users
 
-Used Django’s @login_required decorator for view protection
+__Issue__
 
-Admin role via Django’s admin panel
+- Logout error (HTTP 405)
 
-LO4: Object-Oriented Programming
+__Solution__
 
-Created models as Python classes
+- Changed logout to use POST method via form
 
-Views use class-based and function-based structure with OOP principles
+__Issue__
 
-LO5: Testing (to be completed)
+- Database changes not showing
 
+__Solution__
 
-LO6: Deployment
+- Fixed with makemigrations and migrate
 
-Project hosted in Gitpod with persistent DB
+__Issue__
 
-GitHub used for version control
+- Signup reverse URL error
 
-LO7: Source Control
+__Solution__
 
-Frequent commits with clear messages
+- Corrected name='signup' in urls.py and ensured view was connected
 
-Used branching where appropriate (e.g. feature/signup-form)
+__Issue__
 
-How to Run Locally
+- Broken footer layout
 
-Clone the repo:
+__Solution__
 
-git clone https://github.com/yourusername/cinema-p4.git
+- Used flexbox and fixed alignment to maintain visual structure
+
+## Future Features
+
+- Add user booking history view
+
+- Allow movie ratings and comments
+
+- Add pagination to movie list
+
+- Integrate Stripe for online payments
+
+## Agile Methodologies
+
+- Used Trello and GitHub Issues for tracking features, bugs, and progress
+
+- Project evolved iteratively with priority-based tasks
+
+## Data Modeling
+
+- Models: Movie, Screening, Booking
+
+- Used relational foreign keys and appropriate field types (e.g. DateTimeField, ImageField)
+
+## Authentication & Authorization
+
+- Implemented login, logout, signup
+
+- Used Django’s @login_required decorator for view protection
+
+- Admin role via Django’s admin panel
+
+## Object-Oriented Programming
+
+- Created models as Python classes
+
+- Views use class-based and function-based structure with OOP principles
+
+## Testing
+
+
+## Deployment
+
+- Project hosted in Gitpod with persistent DB
+
+- GitHub used for version control
+
+## Source Control
+
+- Frequent commits with clear messages
+
+- Used branching where appropriate (e.g. feature/signup-form)
+
+## How to Run Locally
+
+- Clone the repo:
+
+- git clone https://github.com/yourusername/cinema-p4.git
 cd cinema-p4
 
-Create virtual environment and activate it:
+- Create virtual environment and activate it:
 
-python -m venv env
+- python -m venv env
 source env/bin/activate
 
-Install dependencies:
+- Install dependencies:
 
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
-Run migrations and start server:
+- pip install pillow
 
-python manage.py migrate
-python manage.py runserver
+- cd /workspace/cinema-p4/cinema_site
 
-Visit http://127.0.0.1:8000/
+- Run migrations and start server:
 
-Credits
+- python manage.py migrate
+- python manage.py runserver
+
+- Visit http://127.0.0.1:8000/
+
+## Credits
 
 Developed by [jared akigbesote]
