@@ -15,7 +15,7 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'your-secret-key-here'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'unsafe-default-key')
 DEBUG = True
 
 ALLOWED_HOSTS = ['jaredakigbesot-cinemap4-vd5wha980q0.ws-eu120.gitpod.io', '8000-jaredakigbesot-cinemap4-9dnv5cggf1i.ws-eu120.gitpod.io', 'https://git.heroku.com/nc-cinema.git']
