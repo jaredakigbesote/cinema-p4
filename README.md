@@ -1,34 +1,35 @@
 # NC Cinema Star Wars
 
 NC Cinema is a full-stack Django web application that allows users to browse movies, view screening times, and book tickets online. It supports user registration, login/logout, and includes role-based access through Django’s built-in admin panel. This project was developed to demonstrate competency across several full-stack development learning outcomes.
-![main]()
+![main](https://github.com/jaredakigbesote/cinema-p4/blob/main/static/assets/images/media/NCmain.PNG)
 
 ## Features
 
 - Home page displaying currently showing movies with images
 
-![home]()
+![home]https://github.com/jaredakigbesote/cinema-p4/blob/main/static/assets/images/media/ncfilmbox.PNG()
 
 - Individual movie detail pages with description, release info, and screening times
 
-![details]()
+![details](https://github.com/jaredakigbesote/cinema-p4/blob/main/static/assets/images/media/details.PNG)
 
 - User authentication (sign up, log in, log out)
 
-![user]{}
+![usersign]{}
+![userlog]{}
 
 - Logged-in users can book available screenings
 
-![notloogedin]()
-![loggedin]()
+![notloogedin](https://github.com/jaredakigbesote/cinema-p4/blob/main/static/assets/images/media/notlog.PNG)
+![loggedin](https://github.com/jaredakigbesote/cinema-p4/blob/main/static/assets/images/media/loggedin.PNG)
 
 - Admin panel to manage movies, screenings, and bookings
 
-![admin]()
+![admin](https://github.com/jaredakigbesote/cinema-p4/blob/main/static/assets/images/media/admin.PNG)
 
 - footer with authentication-based links
 
-![footer]()
+![footer](https://github.com/jaredakigbesote/cinema-p4/blob/main/static/assets/images/media/footer.PNG)
 
 - Flash messages for user feedback (e.g. successful booking)
 
