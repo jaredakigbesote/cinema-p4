@@ -34,7 +34,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cinema'
+    'cinema',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +141,13 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Heroku database
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
+INSTALLED_APPS += ['cloudinary', 'cloudinary_storage']
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('dmpzv3oy8'),
+    'API_KEY': os.environ.get('327523958978141'),
+    'API_SECRET': os.environ.get('1qReLgDLZ2Ro6oIAW8eHqw-OA4Y'),
+}
