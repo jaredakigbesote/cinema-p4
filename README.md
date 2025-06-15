@@ -213,17 +213,45 @@ __Solution__
 
 ## Code Validation
 
-- Python code validated with flake8 to ensure PEP8 compliance.
+- Python code validated with flake8 to ensure PEP8 compliance.(https://www.codewof.co.nz/style/python3/)
 
-- HTML validated using W3C Markup Validator.
+- HTML validated using W3C Markup Validator.()
 
-- CSS validated with W3C CSS Validator.[https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fnc-cinema-0b8ae11a4fc2.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en]
+- CSS validated with W3C CSS Validator.(https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fnc-cinema-0b8ae11a4fc2.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 ## Deployment
 
-- Project hosted in Gitpod with persistent DB
-
 - GitHub used for version control
+
+-  Create Heroku App
+
+- Log in to Heroku Dashboard.
+
+- Click New → Create new app, and give it a unique name (nc-cinema).
+
+- Choose your region 
+
+- Connect to GitHub Repository
+
+- In your app dashboard, go to the Deploy tab.
+
+-  Choose GitHub as the deployment method.
+
+- Connect your GitHub account and search for your repository.
+
+- Click Connect.
+
+-  Set Buildpacks
+
+- Set Config Vars
+
+- Add Required Files(requirements.txt, Procfile)
+
+- Push to Heroku
+
+- Run Migrations & Create Superuser
+
+- Launch the App
 
 ## Source Control
 
