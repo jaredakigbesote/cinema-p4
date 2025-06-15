@@ -217,7 +217,7 @@ __Solution__
 
 - HTML validated using W3C Markup Validator.
 
-- CSS validated with W3C CSS Validator.
+- CSS validated with W3C CSS Validator.[https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fnc-cinema-0b8ae11a4fc2.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en]
 
 ## Deployment
 
