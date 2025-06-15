@@ -60,7 +60,7 @@ ul#movie_box {
     max-width: 1200px;
 }
 
-li#movie_list {
+li.movie_list {
     background-color: rgba(0, 0, 0, 0.75);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
@@ -70,18 +70,18 @@ li#movie_list {
     transition: transform 0.3s ease;
 }
 
-li#movie_list:hover {
+li.movie_list:hover {
     transform: scale(1.05);
 }
 
-li#movie_list img {
+li.movie_list img {
     width: 100%;
     height: auto;
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
-li#movie_list a {
+li.movie_list a {
     color: #ffd700;
     text-decoration: none;
     font-size: 1.2em;
@@ -89,7 +89,7 @@ li#movie_list a {
     margin-top: 10px;
 }
 
-li#movie_list a:hover {
+li.movie_list a:hover {
     text-decoration: underline;
 }
 

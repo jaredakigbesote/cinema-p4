@@ -32,8 +32,6 @@ NC Cinema is a full-stack Django web application that allows users to browse mov
 
 - Flash messages for user feedback (e.g. successful booking)
 
-![booking]()
-
 - Fully styled with a responsive CSS layout
 
 ## Design
@@ -102,6 +100,8 @@ __Admin Access__:
 - Git & GitHub
 
 - Gitpod
+
+- cloudinary
 
 ## Key Issues & Fixes
 
@@ -199,6 +199,25 @@ __Solution__
 
 ## Testing
 
+- Navigation and page links tested across all main pages.
+
+- Registration, login/logout, and user authentication flows verified.
+
+- Admin panel access and content management functions confirmed.
+
+- Image uploads tested via Django Admin and verified on Cloudinary.
+
+- Booking restrictions for authenticated users tested successfully.
+
+- Media and static files served correctly on Heroku deployment.
+
+## Code Validation
+
+- Python code validated with flake8 to ensure PEP8 compliance.
+
+- HTML validated using W3C Markup Validator.
+
+- CSS validated with W3C CSS Validator.
 
 ## Deployment
 
@@ -240,5 +259,9 @@ source env/bin/activate
 - Visit http://127.0.0.1:8000/
 
 ## Credits
+
+Heroku for project deployment
+
+Cloudinary
 
 Developed by [jared akigbesote]
