@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/
 
 import os
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cinema_main.cinema_site.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cinema_site.settings')
 
 from django.core.wsgi import get_wsgi_application
 

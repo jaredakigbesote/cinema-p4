@@ -15,16 +15,15 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'unsafe-default-key')
-DEBUG = True
+SECRET_KEY = os.environ.get('SECRET_KEY', 'nc-cinema-key')
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://nc-cinema-0b8ae11a4fc2.herokuapp.com']
 
 # Disable secure CSRF cookie in dev
-CSRF_COOKIE_SECURE = False
-SESSION_COOKIE_SECURE = False
-
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 # Application definition
 
@@ -35,7 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cinema_main.cinema',
+    'cinema',
 ]
 
 MIDDLEWARE = [
@@ -57,15 +56,18 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'cinema_main.cinema_site.wsgi.application'
+WSGI_APPLICATION = 'cinema_site.wsgi.application'
 
 
 # Database
@@ -137,5 +139,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Heroku database
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-
-DEBUG = False
