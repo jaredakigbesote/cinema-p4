@@ -1,12 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 class Movie(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     duration = models.PositiveIntegerField(help_text="Duration in minutes")
     release_date = models.DateField()
-    image = models.ImageField(upload_to='movie_images/', null=True, blank=True)
+    image = CloudinaryField('image')
 
     def __str__(self):
         return self.title
