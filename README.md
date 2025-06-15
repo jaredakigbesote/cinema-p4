@@ -15,8 +15,8 @@ NC Cinema is a full-stack Django web application that allows users to browse mov
 
 - User authentication (sign up, log in, log out)
 
-![usersign]{}
-![userlog]{}
+![usersign]{https://github.com/jaredakigbesote/cinema-p4/blob/main/static/assets/images/media/singup.PNG}
+![userlog]{https://github.com/jaredakigbesote/cinema-p4/blob/main/static/assets/images/media/login.PNG}
 
 - Logged-in users can book available screenings
 
@@ -216,7 +216,7 @@ __Solution__
 
 - Python code validated with flake8 to ensure PEP8 compliance.(https://www.codewof.co.nz/style/python3/)
 
-- HTML validated using W3C Markup Validator.()
+- HTML validated using W3C Markup Validator.(https://validator.w3.org/nu/?doc=https%3A%2F%2Fnc-cinema-0b8ae11a4fc2.herokuapp.com%2F)
 
 - CSS validated with W3C CSS Validator.(https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fnc-cinema-0b8ae11a4fc2.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
