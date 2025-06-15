@@ -7,7 +7,7 @@ NC Cinema is a full-stack Django web application that allows users to browse mov
 
 - Home page displaying currently showing movies with images
 
-![home]https://github.com/jaredakigbesote/cinema-p4/blob/main/static/assets/images/media/ncfilmbox.PNG()
+![home](https://github.com/jaredakigbesote/cinema-p4/blob/main/static/assets/images/media/ncfilmbox.PNG)
 
 - Individual movie detail pages with description, release info, and screening times
 
@@ -15,8 +15,8 @@ NC Cinema is a full-stack Django web application that allows users to browse mov
 
 - User authentication (sign up, log in, log out)
 
-![usersign]{https://github.com/jaredakigbesote/cinema-p4/blob/main/static/assets/images/media/singup.PNG}
-![userlog]{https://github.com/jaredakigbesote/cinema-p4/blob/main/static/assets/images/media/login.PNG}
+![usersign](https://github.com/jaredakigbesote/cinema-p4/blob/main/static/assets/images/media/singup.PNG)
+![userlog](https://github.com/jaredakigbesote/cinema-p4/blob/main/static/assets/images/media/login.PNG)
 
 - Logged-in users can book available screenings
 
