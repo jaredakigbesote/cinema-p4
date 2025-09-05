@@ -88,6 +88,56 @@ __Admin Access__:
 
 - Admins can add/edit/delete movies, screenings, and users through Django’s admin interface.
 
+ ## User Stories
+
+- The following user stories were considered during development of the cinema booking application:
+
+__Epic 1: Movie Discovery__
+
+- As a user, I want to see a list of available movies so that I can decide which one to watch.
+
+- As a user, I want to view details (description, runtime, poster) about a specific movie so that I can make an informed choice.
+
+__Epic 2: Screenings & Booking__
+
+- As a user, I want to view upcoming screenings for each movie so that I know when it is available.
+
+- As a logged-in user, I want to book a seat at a screening so that I can attend.
+
+- As a logged-in user, I want confirmation of my booking so that I know it was successful.
+
+__Epic 3: Authentication__
+
+- As a new visitor, I want to register an account so that I can book screenings.
+
+- As a returning user, I want to log in so that I can access booking functionality.
+
+- As a logged-in user, I want to log out securely so that my account is safe.
+
+__Epic 4: Administration__
+
+- As an admin, I want to manage movies, screenings, and bookings via the Django admin so that the system is up-to-date.
+
+## Data Model Diagram
+
+┌────────────┐        ┌──────────────┐        ┌─────────────┐
+│   Movie    │ 1    * │   Screening   │ 1    * │   Booking    │
+├────────────┤        ├──────────────┤        ├─────────────┤
+│ id (PK)    │        │ id (PK)       │        │ id (PK)     │
+│ title      │        │ movie_id (FK) │◄───────┤ screening   │
+│ duration   │        │ screening_time│        │ user (FK)   │
+│ genre      │        │ screen_number │        │ seats       │
+│ image      │        │ available_seats│       │ created_at  │
+└────────────┘        └──────────────┘        └─────────────┘
+
+__Relationships:__
+
+- A Movie can have many Screenings.
+
+- A Screening can have many Bookings.
+
+- A Booking belongs to a User and a Screening.
+
 ## Technologies Used
 
 - Python 3.12
